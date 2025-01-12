@@ -15,7 +15,7 @@ def contacts(request):
 def post_contacts(request):
     if request.method == "POST":
         name = request.POST.get("name")
-        number = request.POST.get("number")
+        number = request.POST.get("phone")
         message = request.POST.get("message")
         print(name, number, message)
         return HttpResponse(f"Спасибо за обратную связь, {name}")

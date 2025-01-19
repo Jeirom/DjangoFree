@@ -1,8 +1,6 @@
+from django.conf.urls.static import static
 from django.db import models
 
-# Create your models here.
-
-from django.db import models
 
 class Student(models.Model):
     FIRST_YEAR = 'first'
@@ -34,9 +32,11 @@ class Student(models.Model):
         verbose_name_plural = 'студенты'
         ordering = ['last_name']
 
+
 class Category(models.Model):
     name = models.CharField(max_length=150, verbose_name='Наименование')
     description = models.TextField(max_length=150, verbose_name='Описание')
+
 
 class Product(models.Model):
     name = models.CharField(max_length=150, verbose_name='Наименование')
@@ -46,3 +46,7 @@ class Product(models.Model):
     price = models.IntegerField()
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+
+    @classmethod
+    def create_product(cls, product_dict):
+        return cls(**product_dict)

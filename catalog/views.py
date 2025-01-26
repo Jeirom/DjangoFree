@@ -38,3 +38,8 @@ def product_index(request):
     product = Product.objects.all()
     context = {'product': product}
     return render(request, '../templates/catalog/product_info.html', context=context)
+
+def product_action(request):
+    product = Product.objects.get(id=1)
+    context = {'product': product}
+    return render(request,'../templates/catalog/product_action.html', context=context)

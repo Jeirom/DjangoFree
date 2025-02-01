@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkyBlog - Блоги</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Шапка сайта -->
+    <header class="bg-light py-3">
+        <div class="container">
+            <h1 class="text-center">SkyBlog</h1>
+            <p class="text-center text-muted">Фреймворк(Django) Освобожденный</p>
+        </div>
+    </header>
+
+    <main class="container my-4">
+        <h2>Блоги</h2>
+        <div class="row">
+            <!-- Пример получения блогов из переменной blogs -->
+<!--            {% for blog in blogs %}-->
+            <div class="col-md-12 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ blog.title }}</h5>
+                        <p class="card-text">{{ blog.content }}</p>
+                        <p class="card-text"><small class="text-muted">Просмотры: {{ blog.views }}</small></p>
+                        <div>
+                            <a href="{% url 'edit_blog' blog.id %}" class="btn btn-warning">Редактировать</a>
+                            <a href="{% url 'delete_blog' blog.id %}" class="btn btn-danger">Удалить</a>
+                            <a href="{% url 'blog_detail' blog.id %}" class="btn btn-info">Подробнее</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+<!--            {% endfor %}-->
+        </div>
+    </main>
+
+    <footer class="bg-light text-center py-4">
+        <p>&copy; 2023 SkyBlog. Все права защищены.</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

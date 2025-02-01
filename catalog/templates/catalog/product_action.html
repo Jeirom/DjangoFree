@@ -1,0 +1,59 @@
+{% extends 'catalog/base.html' %}
+{% block title %} Skystore {% endblock %}
+{% load my_tags %}
+{% block content %}
+
+<h3 class="text-center multicolor">Акция месяца!</h3>
+
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-10 d-flex justify-content-center">
+            <div class="card mb-12 box-shadow">
+                <div class="card-header">
+                    <h4 class="text-center my-1 font-weight-normal">{{ product.name }}</h4>
+                </div>
+                <div class="card-body">
+                    <img src="{{ product.image | media_filter }}">
+                    <h1 class="text-center multicolor card-title pricing-card-title">₽ {{ product.price }}</h1>
+                    <ul class="list-unstyled mt-3 mb-4 text-start m-3">
+                        <li>- {{ product.description | truncatechars:100 }}</li>
+                        <li>- Размещен: {{ product.created_at|date:"d M Y"  }} </li>
+                        <li>- Акция действительна месяц после размещения </li>
+                    </ul>
+                    <button type="button" class="btn btn-lg btn-block btn-outline-primary">Купить</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+.multicolor {
+    background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+</style>
+
+{% endblock %}
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Skystore</title>
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+
+
+</head>
+<body>
+
+<div>
+
+<script src="../static/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>

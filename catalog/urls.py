@@ -10,5 +10,5 @@ urlpatterns = [
     path('home/', home),
     path('contacts/', post_contacts),
     path('product_info/', product_index),
-    path('product_action/',product_action),
+    path('product_action/<int:id>/',product_action),
 ]

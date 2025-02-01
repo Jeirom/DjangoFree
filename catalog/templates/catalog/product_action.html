@@ -1,7 +1,8 @@
 {% extends 'catalog/base.html' %}
 {% block title %} Skystore {% endblock %}
+{% load my_tags %}
 {% block content %}
-{% include 'catalog/header.html' %}
+
 <h3 class="text-center multicolor">Акция месяца!</h3>
 
 
@@ -13,6 +14,7 @@
                     <h4 class="text-center my-1 font-weight-normal">{{ product.name }}</h4>
                 </div>
                 <div class="card-body">
+                    <img src="{{ product.image | media_filter }}">
                     <h1 class="text-center multicolor card-title pricing-card-title">₽ {{ product.price }}</h1>
                     <ul class="list-unstyled mt-3 mb-4 text-start m-3">
                         <li>- {{ product.description | truncatechars:100 }}</li>

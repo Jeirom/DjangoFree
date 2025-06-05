@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Удалить блог</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+
+        .blog-container {
+            background: white;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 300px;
+        }
+
+        .delete-button {
+            margin-top: 20px;
+            padding: 15px 30px;
+            font-size: 20px;
+            color: white;
+            background-color: red;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .delete-button:hover {
+            background-color: darkred;
+        }
+    </style>
+</head>
+<body>
+
+<div class="blog-container">
+    <h2>Выбранный блог:</h2>
+    <p id="blog-title">Название вашего блога</p>
+    <button class="delete-button" onclick="deleteBlog()">Удалить</button>
+</div>
+
+<script>
+    function deleteBlog() {
+        // Здесь должен быть код для удаления блога из myblog_form
+        alert('Блог был удалён!');
+        // Например, можете использовать fetch или XMLHttpRequest для отправки запроса на сервер
+    }
+</script>
+
+</body>
+</html>

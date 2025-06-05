@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Подробнее о блоге</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="triangle">
+            <h1 class="blog-title">{{ title }}</h1>
+            <p class="blog-preview">{{ preview }}</p>
+            <p class="blog-content">{{ content }}</p>
+            <p class="blog-info">
+                <span>Создано: {{ created_at }}</span>
+                <span>Просмотров: {{ views }}</span>
+            </p>
+        </div>
+        <a href="../SkyBlog/templates/myblog_form.html" class="back-button">Назад</a>
+    </div>
+</body>
+</html>
